@@ -1,2 +1,2 @@
 # farkle
-javascript code written for node and client
+javascript code for both node server and client, using sock JS socket communication
