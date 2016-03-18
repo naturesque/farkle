@@ -1,0 +1,35 @@
+div.rolledDice {
+	width:280px;
+	height:60px;
+	background-color:#CCFFFF;
+	padding:6px;
+}
+
+div.heldDice {
+	width:280px;
+	height:60px;
+	background-color:#FFFFCC;
+	padding:6px;
+	margin-top:8px;
+}
+
+div.frozenDice {
+	width:280px;
+	height:60px;
+	background-color:#FFCCFF;
+	padding:6px;
+	margin-top:8px;
+}
+
+div#scoreboards {
+    height:300px;
+    overflow:hidden;
+}
+
+div#gameButtons {
+	display:block;
+}
+
+div.left {
+    float: left;
+}

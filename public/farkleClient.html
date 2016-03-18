@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Farkle</title>
+    <link rel="stylesheet" type="text/css" href="css/farkleStyles.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+	<script src="//cdn.jsdelivr.net/sockjs/1.0.3/sockjs.min.js"></script>
+	<script src="js/farkleClient.js"></script>
+</head>
+<body>
+Farkle
+<div id="scoreboards">
+    <div id="playerBoard" class="left">
+        <div class="score">
+            <span class="playerName"></span><br />
+            Round score:&nbsp;<span class="roundScore">0</span><br />
+            Total score:&nbsp;<span class="totalScore">0</span>
+        </div>
+
+        <div class="rolledDice">
+            Rolled Dice:
+            <div>
+                <img class="r1" src="images/die1.jpg" />
+                <img class="r2" src="images/die1.jpg" />
+                <img class="r3" src="images/die1.jpg" />
+                <img class="r4" src="images/die1.jpg" />
+                <img class="r5" src="images/die1.jpg" />
+                <img class="r6" src="images/die1.jpg" />
+
+            </div>
+        </div>
+        <div class="heldDice">
+            Held Dice:
+            <div>
+                <img class="h1" src="images/die1.jpg" />
+                <img class="h2" src="images/die1.jpg" />
+                <img class="h3" src="images/die1.jpg" />
+                <img class="h4" src="images/die1.jpg" />
+                <img class="h5" src="images/die1.jpg" />
+                <img class="h6" src="images/die1.jpg" />
+
+            </div>
+        </div>
+        <div class="frozenDice">
+            Frozen Dice:
+            <div>
+                <img class="f1" src="images/die1.jpg" />
+                <img class="f2" src="images/die1.jpg" />
+                <img class="f3" src="images/die1.jpg" />
+                <img class="f4" src="images/die1.jpg" />
+                <img class="f5" src="images/die1.jpg" />
+                <img class="f6" src="images/die1.jpg" />
+
+            </div>
+        </div>
+    </div>
+    <div id="opponentBoard1" class="left">
+        <div class="oppScore">
+            <span class="playerName"></span><br />
+            Round score:&nbsp;<span class="roundScore">0</span><br />
+            Total score:&nbsp;<span class="totalScore">0</span>
+        </div>
+        <div class="rolledDice">
+            Rolled Dice:
+            <div>
+                <img class="r1" src="images/die1.jpg" />
+                <img class="r2" src="images/die1.jpg" />
+                <img class="r3" src="images/die1.jpg" />
+                <img class="r4" src="images/die1.jpg" />
+                <img class="r5" src="images/die1.jpg" />
+                <img class="r6" src="images/die1.jpg" />
+            </div>
+        </div>
+        <div class="heldDice">
+            Held Dice:
+            <div>
+                <img class="h1" src="images/die1.jpg" />
+                <img class="h2" src="images/die1.jpg" />
+                <img class="h3" src="images/die1.jpg" />
+                <img class="h4" src="images/die1.jpg" />
+                <img class="h5" src="images/die1.jpg" />
+                <img class="h6" src="images/die1.jpg" />
+
+            </div>
+        </div>
+        <div class="frozenDice">
+            Frozen Dice:
+            <div>
+               <img class="f1" src="images/die1.jpg" />
+                <img class="f2" src="images/die1.jpg" />
+                <img class="f3" src="images/die1.jpg" />
+                <img class="f4" src="images/die1.jpg" />
+                <img class="f5" src="images/die1.jpg" />
+                <img class="f6" src="images/die1.jpg" />
+            </div>
+        </div>
+    </div>
+    <div id="opponentBoard2" class="left">
+        <div class="oppScore">
+            <span class="playerName"></span><br />
+            Round score:&nbsp;<span class="roundScore">0</span><br />
+            Total score:&nbsp;<span class="totalScore">0</span>
+        </div>
+        <div class="rolledDice">
+            Rolled Dice:
+            <div>
+                <img class="r1" src="images/die1.jpg" />
+                <img class="r2" src="images/die1.jpg" />
+                <img class="r3" src="images/die1.jpg" />
+                <img class="r4" src="images/die1.jpg" />
+                <img class="r5" src="images/die1.jpg" />
+                <img class="r6" src="images/die1.jpg" />
+            </div>
+        </div>
+        <div class="heldDice">
+            Held Dice:
+            <div>
+                <img class="h1" src="images/die1.jpg" />
+                <img class="h2" src="images/die1.jpg" />
+                <img class="h3" src="images/die1.jpg" />
+                <img class="h4" src="images/die1.jpg" />
+                <img class="h5" src="images/die1.jpg" />
+                <img class="h6" src="images/die1.jpg" />
+
+            </div>
+        </div>
+        <div class="frozenDice">
+            Frozen Dice:
+            <div>
+               <img class="f1" src="images/die1.jpg" />
+                <img class="f2" src="images/die1.jpg" />
+                <img class="f3" src="images/die1.jpg" />
+                <img class="f4" src="images/die1.jpg" />
+                <img class="f5" src="images/die1.jpg" />
+                <img class="f6" src="images/die1.jpg" />
+            </div>
+        </div>
+    </div>
+</div>
+<div id="gameMsg">
+	
+</div>
+<div id="gameButtons">
+	<input type="button" id="rollBtn" value="Roll" onclick="javascript:farkle.requestRoll();" />
+	<input type="button" id="holdBtn" value="End Turn" onclick="javascript:farkle.endTurn();" />
+	<input type="button" id="startBtn" onclick="javascript:farkle.startNewGame();" value="Start Game" />
+	<div id="registration">Name:<input style="margin-left:10px" type="text" id="playerNameInput" /></div>
+</div>
+<script>
+
+farkle.initialize();
+</script>
+</body>
+</html>
